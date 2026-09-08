@@ -33,6 +33,22 @@ body {
     background-attachment: fixed;
 }
 
+body.home-page {
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("2Schermopname-78.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 
 /* =========================
    HEADER
@@ -42,6 +58,8 @@ body {
     height: 85px;
 
     width: 100%;
+
+    position: relative;
 
     display: flex;
     align-items: center;
@@ -87,19 +105,24 @@ body {
 ========================= */
 
 nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
-    display: flex;
-    align-items: center;
-    gap: 45px;
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
+
     font-size: 16px;
+
     transition: 0.3s;
 }
 
@@ -107,9 +130,14 @@ nav a:hover {
     opacity: 0.6;
 }
 
+
+/* actieve pagina */
+
 nav a.active {
     font-weight: bold;
+
     border-bottom: 2px solid white;
+
     padding-bottom: 8px;
 }
 
@@ -127,6 +155,12 @@ nav a.active {
     align-items: center;
 
     padding: 40px 20px;
+}
+
+body.home-page .main {
+    align-items: stretch;
+
+    padding: 24px 16px 32px;
 }
 
 
@@ -289,6 +323,140 @@ button:hover {
     text-decoration: underline;
 }
 
+/* =========================
+   HOME DASHBOARD
+========================= */
+
+.home-dashboard {
+    width: min(1400px, 96vw);
+
+    display: grid;
+    grid-template-columns: minmax(360px, 1.05fr) minmax(420px, 0.95fr);
+    gap: 28px;
+
+    align-items: center;
+}
+
+.dashboard-copy {
+    padding: 50px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+
+    min-height: 690px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #bdbdbd;
+}
+
+.dashboard-copy h1 {
+    font-size: clamp(36px, 4vw, 54px);
+
+    color: white;
+
+    margin-bottom: 12px;
+}
+
+.dashboard-copy .subtitle {
+    color: #bdbdbd;
+
+    max-width: 420px;
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.control-card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.control-card label {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.control-card select {
+    height: 50px;
+
+    padding: 0 14px;
+
+    border: 1px solid #555;
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.control-card select:focus {
+    border-color: white;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.primary-action {
+    width: 100%;
+}
+
+.primary-action:hover {
+    background: #dddddd;
+}
+
+.map-panel {
+    min-height: 720px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+
+    padding: 12px;
+}
+
+#netherlands-map {
+    width: 100%;
+    height: 100%;
+
+    min-height: 696px;
+
+    filter: grayscale(0.1) contrast(1.05);
+}
+
 
 /* =========================
    MOBIEL
@@ -302,6 +470,9 @@ button:hover {
 
     nav {
         gap: 15px;
+
+        position: static;
+        transform: none;
     }
 
     nav a {
@@ -312,6 +483,34 @@ button:hover {
         width: 100%;
 
         padding: 30px;
+    }
+
+    .home-dashboard {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .dashboard-copy,
+    .map-panel {
+        min-height: auto;
+    }
+
+    .dashboard-copy {
+        padding: 28px;
+        min-height: auto;
+    }
+
+    .map-panel {
+        min-height: auto;
+    }
+
+    .control-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #netherlands-map {
+        min-height: 360px;
     }
 
 }
