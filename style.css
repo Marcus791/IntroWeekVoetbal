@@ -87,20 +87,19 @@ body {
 ========================= */
 
 nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
-
     align-items: center;
-
     gap: 45px;
 }
 
 nav a {
     color: white;
-
     text-decoration: none;
-
     font-size: 16px;
-
     transition: 0.3s;
 }
 
@@ -108,14 +107,9 @@ nav a:hover {
     opacity: 0.6;
 }
 
-
-/* actieve pagina */
-
 nav a.active {
     font-weight: bold;
-
     border-bottom: 2px solid white;
-
     padding-bottom: 8px;
 }
 
