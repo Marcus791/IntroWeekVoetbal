@@ -1,0 +1,323 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("2Schermopname-78.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 85px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   NAVIGATIE
+========================= */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+
+/* actieve pagina */
+
+nav a.active {
+    font-weight: bold;
+
+    border-bottom: 2px solid white;
+
+    padding-bottom: 8px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    min-height: calc(100vh - 85px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box {
+    width: 550px;
+
+    padding: 50px;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   TITEL
+========================= */
+
+.login-box h1 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #bdbdbd;
+
+    margin-bottom: 35px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #555;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+/* placeholder */
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+
+/* wanneer je in input klikt */
+
+.input-group input:focus {
+    border-color: white;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+button {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #dddddd;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   REGISTER
+========================= */
+
+.register {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+.register a {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MOBIEL
+========================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .login-box {
+        width: 100%;
+
+        padding: 30px;
+    }
+
+}
