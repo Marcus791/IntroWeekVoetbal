@@ -1,0 +1,53 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { min-height: 100vh; font-family: Arial, Helvetica, sans-serif; color: white; background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),url("2Schermopname-78.png") center/cover fixed no-repeat; }
+.header { height: 85px; width: 100%; padding: 0 55px; position: relative; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,.65); border-bottom: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(10px); }
+.logo { width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; }
+.logo img { width: 55px; height: 55px; object-fit: contain; border-radius: 10px; }
+nav { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.center-nav { display: flex; align-items: center; gap: 45px; }
+nav a, .week-switcher a { color: white; text-decoration: none; }
+nav a { font-size: 16px; transition: .3s; } nav a:hover { opacity: .6; } nav a.active { font-weight: bold; border-bottom: 2px solid white; padding-bottom: 8px; }
+.login-link { position: absolute; right: 55px; padding: 10px 16px; border: 1px solid rgba(255,255,255,.55); border-radius: 7px; }
+.main { min-height: calc(100vh - 85px); display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+.login-box { width: 550px; padding: 50px; background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.25); border-radius: 15px; backdrop-filter: blur(12px); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.login-box h1 { font-size: 34px; margin-bottom: 10px; } .subtitle { color: #bdbdbd; margin-bottom: 35px; font-size: 15px; }
+.input-group { margin-bottom: 25px; } .input-group label, .dialog-fields label { display: block; margin-bottom: 10px; font-size: 15px; font-weight: bold; }
+.input-group input, .dialog-fields input, .dialog-fields select { width: 100%; height: 52px; padding: 0 16px; border: 1px solid #555; border-radius: 7px; outline: none; background: rgba(255,255,255,.12); color: white; font-size: 15px; }
+.input-group input::placeholder, .dialog-fields input::placeholder { color: #aaa; } .input-group input:focus, .dialog-fields input:focus, .dialog-fields select:focus { border-color: white; }
+button { width: 100%; height: 52px; border: 0; border-radius: 7px; background: white; color: black; font-size: 16px; font-weight: bold; cursor: pointer; transition: .3s; } button:hover { background: #ddd; transform: translateY(-2px); }
+.register { text-align: center; margin-top: 25px; color: #999; font-size: 14px; } .register a { color: white; text-decoration: none; font-weight: bold; }
+.schedule-main { align-items: flex-start; padding: 24px 16px 42px; } .schedule-shell { width: min(1500px,96vw); }
+.schedule-toolbar { display: flex; justify-content: space-between; align-items: center; margin: 0 0 18px; }
+.week-switcher { display: flex; align-items: center; gap: 12px; font-size: 24px; } .week-switcher a { font-size: 30px; line-height: 1; }
+.plan-button { width: auto; height: 44px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.55); border-radius: 7px; background: rgba(0,0,0,.58); color: white; text-decoration: none; font-weight: bold; }
+.plan-button:hover { background: rgba(255,255,255,.16); transform: none; }
+.schedule-scroll { overflow-x: auto; background: rgba(0,0,0,.66); padding: 1px; }
+.schedule-table { width: 100%; min-width: 900px; border-collapse: collapse; table-layout: fixed; color: #111; }
+.schedule-table th, .schedule-table td { border: 1px solid rgba(0,0,0,.7); } .schedule-table thead th { height: 118px; padding: 22px 34px; background: #d2d2d2; text-align: left; font-size: 24px; font-weight: 400; }
+.schedule-table tbody tr { height: 82px; } .schedule-table td { position: relative; padding: 6px; vertical-align: top; background: rgba(210,210,210,.92); }
+.time-column { width: 136px; background: #d2d2d2; text-align: center !important; font-size: 14px !important; font-weight: 400 !important; }
+.appointment { min-height: 58px; position: relative; padding: 7px 27px 7px 9px; border-radius: 5px; background: rgba(255,255,255,.8); font-size: 13px; } .appointment strong, .appointment span { display: block; overflow-wrap: anywhere; } .appointment span { margin-top: 4px; color: #555; font-size: 12px; }
+.appointment-owner { display: block; margin-top: 4px; color: #666; font-size: 10px; overflow-wrap: anywhere; }
+.form-error { margin-bottom: 20px; padding: 12px; border: 1px solid #b66; border-radius: 7px; background: rgba(130,0,0,.25); color: #ffd4d4; }
+.delete-form { position: absolute; top: 2px; right: 2px; } .delete-button, .close-button { width: 22px; height: 22px; padding: 0; border-radius: 50%; background: transparent; color: #333; font-size: 19px; line-height: 18px; } .delete-button:hover, .close-button:hover { background: #bbb; transform: none; }
+.plan-dialog { width: min(500px,calc(100% - 32px)); padding: 28px; border: 1px solid rgba(255,255,255,.25); border-radius: 15px; background: #151515; color: white; box-shadow: 0 25px 80px #000; } .plan-dialog::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(4px); }
+.plan-dialog form > button { margin-top: 8px; } .dialog-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; } .dialog-heading h2 { font-size: 25px; }
+.close-button { color: white; font-size: 25px; } .dialog-fields { display: grid; gap: 17px; margin-bottom: 24px; } .dialog-fields label span { color: #999; font-weight: 400; } .dialog-fields select { color: white; } .dialog-fields option { color: black; }
+@media (max-width: 700px) { .header { padding: 0 20px; } nav { position: absolute; inset: 0; } .center-nav { gap: 15px; } nav a { font-size: 13px; } .login-link { right: 20px; padding: 8px 10px; } .login-box { width: 100%; padding: 30px; } .schedule-main { padding: 20px 10px 32px; } .schedule-shell { width: 100%; } .schedule-toolbar { margin: 0 4px 14px; } .week-switcher { font-size: 20px; } .week-switcher a { font-size: 26px; } }
+
+.home-dashboard { width: min(1400px, 96vw); display: grid; grid-template-columns: minmax(360px, 1.05fr) minmax(420px, .95fr); gap: 28px; align-items: center; }
+.dashboard-copy, .map-panel { background: rgba(0,0,0,.72); border: 1px solid rgba(255,255,255,.25); border-radius: 15px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+.dashboard-copy { padding: 50px; min-height: 620px; display: flex; flex-direction: column; justify-content: center; }
+.eyebrow { margin-bottom: 12px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #bdbdbd; }
+.dashboard-copy h1 { margin-bottom: 12px; font-size: clamp(36px,4vw,54px); }
+.dashboard-copy .subtitle { max-width: 420px; margin-bottom: 30px; }
+.control-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-bottom: 28px; }
+.control-card { display: flex; flex-direction: column; gap: 10px; } .control-card label { font-size: 15px; font-weight: 700; }
+.control-card select { height: 50px; padding: 0 10px; border: 1px solid #555; border-radius: 7px; background: rgba(255,255,255,.12); color: white; font-size: 14px; outline: none; }
+.control-card option { color: black; } .map-panel { min-height: 640px; padding: 12px; } #netherlands-map { width: 100%; height: 100%; min-height: 616px; filter: grayscale(.1) contrast(1.05); }
+.schedule-page .schedule-main { padding-top: 30px; } .schedule-page .schedule-shell { width: min(1120px, 94vw); }
+.schedule-page .schedule-table { min-width: 760px; } .schedule-page .schedule-table thead th { height: 66px; padding: 12px 16px; background: rgba(255,255,255,.78); color: #111; font-size: 17px; }
+.schedule-page .schedule-table tbody tr { height: 58px; } .schedule-page .schedule-table td, .schedule-page .time-column { background: rgba(255,255,255,.68); }
+.schedule-page .time-column { width: 85px; font-size: 12px !important; } .schedule-page .appointment { min-height: 42px; padding: 5px 22px 5px 7px; font-size: 11px; }
+.schedule-page .appointment span { margin-top: 2px; font-size: 10px; } .schedule-page .schedule-scroll { background: rgba(0,0,0,.58); border: 1px solid rgba(255,255,255,.22); }
+@media (max-width: 700px) { .home-dashboard { grid-template-columns: 1fr; width: 100%; gap: 20px; } .dashboard-copy { padding: 28px; min-height: auto; } .map-panel { min-height: auto; } #netherlands-map { min-height: 360px; } .control-grid { grid-template-columns: 1fr; } }
